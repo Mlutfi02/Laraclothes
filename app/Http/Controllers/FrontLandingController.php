@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products_models;
 use App\Models\Category_models;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 
 class FrontLandingController extends Controller
@@ -16,9 +17,29 @@ class FrontLandingController extends Controller
      */
     public function index()
     {
+        dump("kucing");
+        // $cartItems = \Cart::getContent();
+        // dd($cartItems);
+        \Cart::add(
+            [
+                'id' =>,
+                'name' => "Kaos",
+                'price' => 1000,
+                'quantity' => 2,
+                'attributes' => array(
+                    'description' => "dsdasasd",
+                    'portion' => "kdaskdask",
+                    'units' => "kasddkas",
+                )
+            ]
+        );
+        $cartItems = \Cart::getContent(); 
+        // dd($cartItems); 
+
+
         $products_models = Products_models::all();
         $category_models = Category_models::all();
-        return view('front.landing', compact('products_models', 'category_models'));
+        return view('front.landing', compact('products_models', 'category_models','cartItems'));
     }
 
     /**
