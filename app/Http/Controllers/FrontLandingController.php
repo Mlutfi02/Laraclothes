@@ -22,7 +22,7 @@ class FrontLandingController extends Controller
         // dd($cartItems);
         \Cart::add(
             [
-                'id' =>,
+                'id' => 1,
                 'name' => "Kaos",
                 'price' => 1000,
                 'quantity' => 2,
