@@ -170,6 +170,7 @@
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ route('view_cart') }}" class="nav-item nav-link">Shooping Cart</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -201,13 +202,11 @@
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
                   </div>
-                  <hr class="my-4">
                   <div class="my-8 py-6 px-6 bg-white w-10/12 mx-auto">
-        <h1 class="text-2xl font-bold text-gray-700 mb-4">Carts</h1>
-        <table class="table-auto w-full">
+        <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th class="w-[20%] py-6"></th>
+                    <th class="w-[20%] py-6">Image</th>
                     <th class="uppercase w-[40%]">Name</th>
                     <th class="uppercase w-[20%]">Quantity</th>
                     <th class="uppercase w-[10%]">Price</th>
@@ -221,19 +220,19 @@
                         <img src="{{ asset('images/products_models/'.$cart->attributes->image) }}" class="w-full h-40" width="200" height="200">
                         </td>
                         <td class="text-center">{{ $cart->name }}</td>
-                        <td class="text-center">
+                        <td class="text-center"> Jumlah Barang = {{ $cart->quantity }}
                             <form method="POST" action="{{ route('update-cart') }}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $cart->id }}">
                                 <input type="number" id="quantity" name="quantity" min="1"
-                                    value="{{ $cart->quantity }}" class="rounded w-3/5 my-1">
-                                <button class="bg-cyan-900 w-3/5 py-2 text-white rounded">Update</button>
+                                    value="1" class="rounded w-3/5 my-1">
+                                <button class="bg-cyan-900 w-3/5 py-2 text-dark rounded">Tambah Barang</button>
                             </form>
 
                         </td>
                         <td class="text-center">{{ $cart->price }}</td>
                         <td  class="text-center">
-                            <a class="bg-cyan-900 w-2/5 py-3 px-4 text-black rounded-full" href="{{ route('remove-item', $cart->id) }}">HAPUS</a>
+                            <a class="bg-cyan-900 w-2/5 py-3 px-4 text-dark rounded-full" href="{{ route('remove-item', $cart->id) }}">HAPUS</a>
                         </td>
                     </tr>
                 @endforeach
@@ -242,10 +241,10 @@
             <tfoot>
                 <tr class="">
                     <th colspan="4" class="text-2xl font-base text-gray-500 text-left">
-                        Total: <span>Rp. {{ Cart::getTotal() }}</span>
+                        Total: <span>Rp. {{ number_format(Cart::getTotal()) }}</span>
                     </th>
                     <td class="">
-                        <a class="bg-cyan-900  py-3 px-2 text-white rounded" style="{{ Cart::isEmpty() ? 'pointer-events:none;' : '' }}" href="{{ route('clear-item') }}">Clear Carts</a>
+                        <a class="bg-cyan-900  py-3 px-2 text-dark rounded" style="{{ Cart::isEmpty() ? 'pointer-events:none;' : '' }}" href="{{ route('clear-item') }}">Clear Carts</a>
                     </td>
                 </tr>
             </tfoot>

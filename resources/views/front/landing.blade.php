@@ -158,7 +158,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="{{'/'}}" class="nav-item nav-link active">Home</a>
                             <a href="shop.html" class="nav-item nav-link">Jacket</a>
                             <a href="detail.html" class="nav-item nav-link">Kaos</a>
                             <div class="nav-item dropdown">
@@ -170,6 +170,7 @@
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ route('view_cart') }}" class="nav-item nav-link">Shooping Cart</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -192,6 +193,7 @@
 
 
     <!-- Carousel Start -->
+    
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
             <div class="col-lg-8">
@@ -209,7 +211,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">
                                         New Clothes</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"></p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Brand RVCA Promo 30%</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
@@ -217,13 +219,11 @@
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
                             <img class="position-absolute w-100 h-100"
-                                src="{{ asset('images/products_models/' . $products_models[1]->image) }}" style="object-fit: cover;">
+                                src="{{ asset('images/products_models/' . $products_models[4]->image) }}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">New VGA
-                                        Coming</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet
-                                        lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">MR BEAST MERCH IS AVAILABLE</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">GRAB NOW BEFORE ITS RUN OUT!!!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
@@ -234,9 +234,8 @@
                                 src="{{ asset('images/products_models/' . $products_models[3]->image) }}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"> New Motherboard</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet
-                                        lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"> Erigo </h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Offers 20% GRAB NOW !!!!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
                                 </div>
@@ -454,6 +453,17 @@
                                 <h5>Rp{{ number_format($item->price) }}</h5>
                                 {{-- <h6 class="text-muted ml-2"><del>$123.00</del></h6> --}}
                             </div>
+                            <div class="flex justify-end  mt-4">
+                            <form method="POST" action="{{ route('add_cart') }}" enctype="multipart/form-data">
+                                @csrf
+                                <input name="id" value="{{ $item->id }}" hidden>
+                                <input name="name" value="{{ $item->product_name }}" hidden>
+                                <input name="price" value="{{ $item->price }}" hidden>
+                                <input name="image" value="{{ $item->image }}" hidden> 
+
+                                <button class="bg-blue-950 text-white rounded-md text-sm px-3 py-1 font-bold">Add To Cart</button>
+                            </form>
+                        </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
                                 <small class="fa fa-star text-primary mr-1"></small>

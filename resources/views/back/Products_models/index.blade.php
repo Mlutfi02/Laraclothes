@@ -207,10 +207,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PRODUCT IMAGE</label>
+                <label class=" fw-semibold fs-6 mb-2">IMAGE</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("product_image", null, array("placeholder" => "PRODUCT IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("image", null, array("placeholder" => "IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -341,10 +341,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PRODUCT IMAGE</label>
+                <label class=" fw-semibold fs-6 mb-2">IMAGE</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("product_image", $products_models->product_image, array("placeholder" => "PRODUCT IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("image", $products_models->image, array("placeholder" => "IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -464,10 +464,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PRODUCT IMAGE</label>
+                <label class=" fw-semibold fs-6 mb-2">IMAGE</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("product_image", $products_models->product_image, array("placeholder" => "PRODUCT IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("image", $products_models->image, array("placeholder" => "IMAGE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -557,7 +557,7 @@
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Id Category</th><th class="min-w-125px sorting">Product Name</th><th class="min-w-125px sorting">Product Image</th><th class="min-w-125px sorting">Description</th><th class="min-w-125px sorting">Price</th><th class="min-w-125px sorting">Quantity</th><th class="min-w-125px sorting">Deleted</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Id Category</th><th class="min-w-125px sorting">Product Name</th><th class="min-w-125px sorting">Image</th><th class="min-w-125px sorting">Description</th><th class="min-w-125px sorting">Price</th><th class="min-w-125px sorting">Quantity</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
@@ -589,7 +589,7 @@
 															      <!--begin::products_models details-->
 
                                   </td>
-                <td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->description,25) }}</a></td><td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->price,25) }}</a></td><td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->quantity,25) }}</a></td><td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->deleted,25) }}</a></td>
+                <td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->description,25) }}</a></td><td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->price,25) }}</a></td><td><a href="{{ route("products_models.show",$products_models->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($products_models->quantity,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
