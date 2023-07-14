@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontLandingController;
 use App\Http\Controllers\ProductLandingController;
+use App\Http\Controllers\CartController;
 
 use App\Http\Controllers\Back\CrudBuilderController;
 use App\Http\Controllers\Back\ApiBuilderController;
@@ -97,3 +98,15 @@ Route::get('/product', [ProductLandingController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/products', [ProductContoller::class, 'product_list'])->name('products');
+
+Route::post('/products/cart/add', [CartController::class, 'add_cart'])->name('add_cart');
+
+Route::get('/products/cart/view', [CartController::class, 'view_cart'])->name('view_cart');
+
+Route::post('/products/cart/update', [CartController::class, 'update_cart'])->name('update-cart');
+
+Route::get('/products/cart/{id}/remove', [CartController::class, 'remove_item'])->name('remove-item');
+
+Route::get('/products/cart/clear', [CartController::class, 'clear_item'])->name('clear-item');

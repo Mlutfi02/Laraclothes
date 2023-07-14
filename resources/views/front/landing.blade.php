@@ -165,7 +165,7 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                         class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
+                                    <a href="{{ route('view_cart') }}" class="dropdown-item">Shopping Cart</a>
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
@@ -335,13 +335,6 @@
                 class="bg-secondary pr-3">Featured Products</span></h2>
         <div class="row px-xl-5">
 
-        @foreach ($cartItems as $item)
-        id:{{$item->id}},
-        name:{{$item->name}},
-        price:{{$item->price}},
-        quantity:{{$item->quantity}},
-        attributes->description:{{$item->attributes->description}}
-        @endforeach
 
             @foreach ($products_models as $item)
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
@@ -367,6 +360,17 @@
                                 <h5>Rp {{ number_format($item->price) }}</h5>
                                 {{-- <h6 class="text-muted ml-2"><del></del></h6> --}}
                             </div>
+                            <div class="flex justify-end  mt-4">
+                            <form method="POST" action="{{ route('add_cart') }}" enctype="multipart/form-data">
+                                @csrf
+                                <input name="id" value="{{ $item->id }}" hidden>
+                                <input name="name" value="{{ $item->product_name }}" hidden>
+                                <input name="price" value="{{ $item->price }}" hidden>
+                                <input name="image" value="{{ $item->image }}" hidden> 
+
+                                <button class="bg-blue-950 text-white rounded-md text-sm px-3 py-1 font-bold">Add To Cart</button>
+                            </form>
+                        </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
                                 <small class="fa fa-star text-primary mr-1"></small>
