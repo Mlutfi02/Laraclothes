@@ -20,21 +20,21 @@ class FrontLandingController extends Controller
         dump("kucing");
         // $cartItems = \Cart::getContent();
         // dd($cartItems);
-        \Cart::add(
-            [
-                'id' => 1,
-                'name' => "Kaos",
-                'price' => 1000,
-                'quantity' => 2,
-                'attributes' => array(
-                    'description' => "dsdasasd",
-                    'portion' => "kdaskdask",
-                    'units' => "kasddkas",
-                )
-            ]
-        );
+        // \Cart::add(
+        //     [
+        //         'id' => 1,
+        //         'name' => "Kaos",
+        //         'price' => 1000,
+        //         'quantity' => 2,
+        //         'attributes' => array(
+        //             'description' => "dsdasasd",
+        //             'portion' => "kdaskdask",
+        //             'units' => "kasddkas",
+        //         )
+        //     ]
+            // );
         $cartItems = \Cart::getContent(); 
-        // dd($cartItems); 
+        dump($cartItems); 
 
 
         $products_models = Products_models::all();
