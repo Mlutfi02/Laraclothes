@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Clothes Store</title>
+    <title>Cars Rental</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -88,8 +88,8 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">Clothes</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Store</span>
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Cars</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Rental</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -159,8 +159,8 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{'/'}}" class="nav-item nav-link active">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Jacket</a>
-                            <a href="detail.html" class="nav-item nav-link">Kaos</a>
+                            <a href="shop.html" class="nav-item nav-link">Cars</a>
+                            <!-- <a href="detail.html" class="nav-item nav-link">Kaos</a> -->
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                         class="fa fa-angle-down mt-1"></i></a>
@@ -210,7 +210,7 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">
-                                        New Clothes</h1>
+                                        New Cars</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Brand RVCA Promo 30%</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
@@ -234,7 +234,7 @@
                                 src="{{ asset('images/products_models/' . $products_models[3]->image) }}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"> Erigo </h1>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"> Cars </h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Offers 20% GRAB NOW !!!!</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
                                         href="#">Shop Now</a>
@@ -250,7 +250,7 @@
                         style="object-fit: scale-down;" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Eiger Offers</h3>
+                        <h3 class="text-white mb-3">Cars Offers</h3>
                         <a href="" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                     <img class="img-fluid" src="{{ asset('images/products_models/logoerigo.png') }}" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Erigo Offers</h3>
+                        <h3 class="text-white mb-3">Cars Offers</h3>
                         <a href="" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
